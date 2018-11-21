@@ -1,4 +1,4 @@
-window.onload=function(){
+window.onload = function(){
 
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
@@ -35,18 +35,18 @@ window.onload=function(){
     document.addEventListener("mousemove", mouseMoveHandler, false);
 
     function keyDownHandler(e) {
-        if(e.keyCode == 39) {
+        if(e.keyCode === 39) {
             rightPressed = true;
         }
-        else if(e.keyCode == 37) {
+        else if(e.keyCode === 37) {
             leftPressed = true;
         }
     }
     function keyUpHandler(e) {
-        if(e.keyCode == 39) {
+        if(e.keyCode === 39) {
             rightPressed = false;
         }
-        else if(e.keyCode == 37) {
+        else if(e.keyCode === 37) {
             leftPressed = false;
         }
     }
@@ -60,12 +60,12 @@ window.onload=function(){
         for(var c=0; c<brickColumnCount; c++) {
             for(var r=0; r<brickRowCount; r++) {
                 var b = bricks[c][r];
-                if(b.status == 1) {
+                if(b.status === 1) {
                     if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
                         dy = -dy;
                         b.status = 0;
                         score++;
-                        if(score == brickRowCount*brickColumnCount) {
+                        if(score === brickRowCount*brickColumnCount) {
                             alert("YOU WIN, CONGRATS!");
                             document.location.reload();
                         }
